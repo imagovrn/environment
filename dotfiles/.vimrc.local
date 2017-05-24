@@ -1,0 +1,12 @@
+set guifont=Ubuntu\ Mono\ 12
+set nospell
+colorscheme ir_black
+
+let g:spf13_no_omni_complete = 1
+let g:neocomplete#enable_at_startup = 0
+let g:spf13_no_conceal = 1
+set conceallevel=0
+
+autocmd BufNewFile,BufRead *.cuh   set ft=cpp
+
+set ic
