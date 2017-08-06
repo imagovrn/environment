@@ -1,4 +1,4 @@
-source ~/.config/omf/git-aliases.fish
+source (dirname (status -f))/git-aliases.fish
 
 set TERM xterm-256color
 set -g theme_title_display_process yes
@@ -56,6 +56,7 @@ alias ak_formatdiff='git diff -U0 HEAD^ | clang-format-diff-3.7 -i -p1; gg'
 alias ak_rebuildcache='ninja rebuild_cache ^&1 | ak_colorbuild'
 alias ak_repo_checkout_current="git co (repo info . | grep \"Current revision: \" | sed \"s/Current revision: \(.*\)/\1/g\")"
 alias ak_grep_cmake="ag $argv[1] -i -G \"(CMakeLists.txt|.*\.cmake)\""
+alias jekyll='docker run --rm -p 127.0.0.1:4000:4000 --volume=$PWD:/srv/jekyll -it jekyll/jekyll jekyll'
 
 alias teto=ak_build
 alias fgg=ak_formatdiff
